@@ -18,3 +18,24 @@
 # lst_ele_sum([1, 2, 3]) ➞ [5, 4, 3]
 # lst_ele_sum([1, 2, 3, 4, 5]) ➞ [14, 13, 12, 11, 10]
 # lst_ele_sum([10, 20, 30, 40, 50, 60]) ➞ [200, 190, 180, 170, 160, 150]
+LIST = [1, 2, 3, 4, 5]
+
+
+def lst_ele_sum(list):
+    list_of_sum = []
+    list_pop = list.copy()
+    for _ in range(len(list)):
+        list_pop.pop(_)
+        list_of_sum.append(sum(list_pop))
+        list_pop = list.copy()
+    return list_of_sum
+
+
+print(lst_ele_sum(LIST))
+
+# ---------------------------------------------------------
+# def lst_ele_sum(nums):
+#     total = sum(nums)
+#     return [total - i for i in nums]
+#
+# lst_ele_sum=lambda l:[sum(l)-x for x in l]
