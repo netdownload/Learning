@@ -7,3 +7,6 @@
 .idea/modules.xml
 .idea/vcs.xml
 .idea/$CACHE_FILE$
+.idea/deployment.xml
+.idea/inspectionProfiles/Project_Default.xml
+FastAPI/__pycache__/main.cpython-39.pyc
