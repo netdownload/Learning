@@ -1,5 +1,6 @@
 from fileinput import filename
-from re import S
+from ntpath import join
+from fpdf import FPDF
 
 
 class Bill:
@@ -38,7 +39,20 @@ class PdfReport:
         self.filename = filename
 
     def generate(self, flatmate1, flatmate2, bill):
-        pass
+        pdf = FPDF(format="a4", orientation="portrait", unit="pt")
+        pdf.add_page()
+
+        # Insert a title
+        pdf.set_font(family="Times", size=24, style="B")
+        pdf.cell(w=0, h=80, txt="Flatemates Bill", border=1, align="C", ln=1)
+
+        # Insert period
+        pdf.cell(w=100, h=40, txt="Period:", border=1)
+        pdf.cell(w=150, h=40, txt=bill.period, border=1, ln=1)
+
+        #
+        pdf.cell(w=150, h=40, txt=john.name, border=1)
+        pdf.output("bill.pdf")
 
 
 bill = Bill(amount=120, period="March 2021")
@@ -46,4 +60,7 @@ john = Flatmate(name="John", days_in_house=20)
 marry = Flatmate(name="Marry", days_in_house=25)
 
 print(john.name, "pays:", john.pays(bill=bill, flatmate2=marry))
-print(marry.name, "pays:",marry.pays(bill=bill, flatmate2=john))
+print(marry.name, "pays:", marry.pays(bill=bill, flatmate2=john))
+
+pdf_bill = PdfReport("bill")
+pdf_bill.generate(john, marry, bill)
