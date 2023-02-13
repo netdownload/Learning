@@ -1,12 +1,7 @@
 /venv/
-.idea/inspectionProfiles/profiles_settings.xml
+.idea/
 .gitignore
 .gitignore
-.idea/Learning.iml
-.idea/misc.xml
 .idea/modules.xml
-.idea/vcs.xml
-.idea/$CACHE_FILE$
-.idea/deployment.xml
-.idea/inspectionProfiles/Project_Default.xml
 FastAPI/__pycache__/main.cpython-39.pyc
+OOP/.idea/
