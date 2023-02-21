@@ -10,7 +10,7 @@ while command != 'exit':
         print('ok')
     if command == 'back':
         if stack_size > 0:
-            print(stack[stack_size-1])
+                print(stack[stack_size-1])
         else:
             print('error')
     if command == 'pop':
