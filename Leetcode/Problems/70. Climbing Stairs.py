@@ -65,6 +65,6 @@ def climbStairs(n):
         two = ans
     return two
 
-print(climbStairs(3))
+print(climbStairs(7))
 
 
